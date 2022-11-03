@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "nodemon main.js"
   },
   "dependencies": {
     "express": "^4.9.8",
