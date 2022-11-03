@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon main.js"
+    "start": "node main.js"
   },
   "dependencies": {
     "express": "^4.9.8",
@@ -22,8 +22,8 @@
     "url": "git+https://github.com/millow-stack/iitb_intern.git"
   },
   "keywords": [
-    "chatting",
-    "message"
+    "requests",
+    "network"
   ],
   "author": "Millow",
   "license": "ISC",
