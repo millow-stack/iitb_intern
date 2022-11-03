@@ -1,0 +1,34 @@
+{
+  "name": "iitb_intern",
+  "version": "1.0.0",
+  "description": "a pre-internship project",
+  "main": "main.js",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.9.8",
+    "cookie-parser": "*",
+    "fs": "*",
+    "path": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millow-stack/iitb_intern.git"
+  },
+  "keywords": [
+    "chatting",
+    "message"
+  ],
+  "author": "Millow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/millow-stack/iitb_intern/issues"
+  },
+  "homepage": "https://github.com/millow-stack/iitb_intern#readme"
+}
