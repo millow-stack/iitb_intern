@@ -39,7 +39,7 @@ app.post('', (req, res) => {
     res.sendFile(__dirname + '/form.html');
 });
 
-var server = app.listen(80, (err) => {
+var server = app.listen((process.env.PORT || 80), (err) => {
     var host = server.address().address || ''
     var port = server.address().port
     if (err) {
