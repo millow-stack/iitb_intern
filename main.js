@@ -1,8 +1,8 @@
-var express =   require("express");  
-var multer  =   require('multer'); 
-var path = require('path');
+const express =   require("express");  
+const multer  =   require('multer'); 
+const path = require('path');
 
-var app =   express(); 
+let app =   express(); 
 
 var storage =   multer.diskStorage({  
   destination: function (req, file, callback) {  
@@ -39,6 +39,12 @@ app.post('', (req, res) => {
     res.sendFile(__dirname + '/form.html');
 });
 
-app.listen(80,function(){  
-    console.log("Server is running on port 80");  
-});  
+var server = app.listen(80, (err) => {
+    var host = server.address().address || ''
+    var port = server.address().port
+    if (err) {
+        throw err;
+    }
+    console.log('Example app listening at http://%s:%s', host, port)
+    console.log('____________________________________________________________________________')
+});
