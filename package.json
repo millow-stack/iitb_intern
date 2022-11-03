@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "express": "^4.9.8",
-    "nodemon": "*",
     "fs": "*",
     "path": "*"
   },
