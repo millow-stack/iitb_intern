@@ -1,0 +1,64 @@
+<style type="text/css">
+	*{
+		margin: 25px;
+		text-align: center;
+	}
+	input[type='file'], .preview {
+	  opacity:0;
+	  display: none;
+	}
+	input[type='submit'], #button{
+		background: #e7e7e7;
+		padding: 5px;
+		font-size: 1cm;
+/*		transform:translateX(-50%);
+		transform:translateY(-50%);
+		top: -50%;*/
+		border: 0.3px solid #4d4d4d;
+		border-radius: 9px;
+		box-shadow: 0px 0px 5px 1px black;
+		transition: all 0.5s;
+	}
+	input[type='submit']:hover, #button:hover{
+		height: 10px;
+		border: 0.3px solid #1a1a1a;
+		box-shadow: 0px 0px 17px 1px grey;
+		cursor: pointer;
+	}
+</style>
+
+
+<form name = "form" enctype = "multipart/form-data" action = "" method = "POST" >
+	<span id='button'>Select File</span><br/>
+	<input type="file" onchange="document.querySelector('form').submit()" accept="*/*" name="mediaFile"/>
+	<!-- <input type="submit" name="submit"/> -->
+	<hr/>
+	<div id="preview"></div>
+</form>
+<script type="text/javascript">
+const chooseFile = document.querySelector("input[type=file]");
+const preview = document.getElementById("preview");
+
+function getDataURI() {
+  const files = chooseFile.files[0];
+  var extension = chooseFile.files[0].name.split('.').pop().toLowerCase();
+  if (files) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(files);
+    fileReader.addEventListener("load", function () {
+      preview.style.display = "block";
+      if (extention == 'txt'){
+      	preview.innerHTML = '<img src="' + this.result + '" />';
+      }
+      if (['mp4', 'png', 'jpg', 'jpeg'].indexOf(extension)){
+      	preview.innerHTML = '<textarea value="' + this.result + '" ></textarea>';
+      }
+    });    
+  }
+}
+</script>
+<script type="text/javascript">
+		// document.querySelectorAll('#button')[0].addEventListener('click', function(){document.querySelectorAll('input[type=file]')[0].click()});
+		// document.querySelectorAll('#button')[1].addEventListener('click', function(){document.querySelectorAll('input[type=file]')[1].click()});
+		document.querySelector('#button').addEventListener('click', function(){document.querySelector('input[type=file]').click()});
+</script>
